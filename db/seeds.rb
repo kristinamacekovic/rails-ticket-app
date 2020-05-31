@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Ticket.destroy_all
+
+20.times do |index|
+  Ticket.create!(company: Faker::Company.name,
+                departure: Faker::Time.forward(days: 60, format: :long),
+                from: Faker::Address.city,
+                to: Faker::Address.city,
+                num_max: Faker::Number.within(range: 1..20))
+end
+
+p "Created #{Ticket.count} tickets"
