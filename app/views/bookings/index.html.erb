@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Bookings</h1>
+<h1><%="#{current_user.email[0,current_user.email.index('@')]}'s bookings"  %></h1>
 
 <table>
     <thead>
@@ -19,11 +17,14 @@
             <td><%= booking.ticket.company %></td>
             <td><%= booking.ticket.from %></td>
             <td><%= booking.ticket.to %></td>
-            <td><%= booking.ticket.departure %></td>
-            <td><%= link_to 'Show', booking %></td>
-            <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
-            <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= booking.ticket.departure.to_formatted_s(:long)    %></td>
+            <% if get_hours(booking.ticket.departure-DateTime.now)>0 %>
+            <td><%= link_to 'Cancel', booking, method: :delete, data: { confirm: 'Are you sure?' }%></td>
+            <% else %>
+            <td> Too late to cancel </td>
+            <% end %>
         </tr>
         <% end %>
     </tbody>
 </table>
+<%= link_to 'Back to tickets', root_path %>

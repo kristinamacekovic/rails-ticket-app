@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Tickets</h1>
 
 <div>
@@ -29,14 +27,16 @@
         <% @tickets.each do |ticket| %>
         <tr>
             <td><%= ticket.company %></td>
-            <td><%= ticket.departure %></td>
+            <td><%= ticket.departure.to_formatted_s(:long)    %></td>
             <td><%= ticket.from %></td>
             <td><%= ticket.to %></td>
             <% num_available =  ticket.num_max - @bookings.where(ticket_id: ticket.id).length %>
             <td><%= num_available  %></td>
-            <td><%= link_to 'Show', ticket %></td>
-
-            <td><%= link_to 'Buy', new_ticket_booking_path(ticket) if num_available>0 %></td>
+            <% if num_available > 0 %>
+            <td><%= link_to 'Buy', new_ticket_booking_path(ticket) %></td>
+            <% else  %>
+            <td>No more available tickets</td>
+            <% end %>
         </tr>
         <% end %>
     </tbody>

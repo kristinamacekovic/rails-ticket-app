@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Company:</strong>
   <%= @ticket.company %>
@@ -20,9 +18,4 @@
   <%= @ticket.to %>
 </p>
 
-<p>
-  <strong>Num max:</strong>
-  <%= @ticket.num_max %>
-</p>
-
-<%= link_to 'Back', tickets_path %>
+<%= link_to 'Back to tickets', root_path %>

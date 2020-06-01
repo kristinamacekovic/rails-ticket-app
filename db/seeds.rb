@@ -17,7 +17,9 @@ end
 
 p "Created #{Ticket.count} tickets"
 
-Booking.destroy_all
+User.destroy_all
+User.create([{email: 'test@test.com', password: 'password'}])
+p "Created #{User.count} users"
 
-Booking.create([{ card_number: 9999999999999999, user_id: 1, ticket_id:3 }])
-p "Created #{Booking.count} bookings"
+Booking.destroy_all
+p "Bookings: #{Booking.count}"

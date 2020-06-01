@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }
       else
-        format.html { render :new }
+        format.html { redirect_to new_booking_path, notice: 'Invalid card number. Must be 16 numeric characters'}
         format.json { render json: @booking.errors, status: :unprocessable_entity }
       end
     end
