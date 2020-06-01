@@ -20,7 +20,7 @@
             <th>Departure</th>
             <th>From</th>
             <th>To</th>
-            <th>Num max</th>
+            <th>Available tickets</th>
             <th colspan="3"></th>
         </tr>
     </thead>
@@ -32,9 +32,11 @@
             <td><%= ticket.departure %></td>
             <td><%= ticket.from %></td>
             <td><%= ticket.to %></td>
-            <td><%= ticket.num_max %></td>
+            <% num_available =  ticket.num_max - @bookings.where(ticket_id: ticket.id).length %>
+            <td><%= num_available  %></td>
             <td><%= link_to 'Show', ticket %></td>
-            <td><%= link_to 'Buy', new_ticket_booking_path(ticket) %></td>
+
+            <td><%= link_to 'Buy', new_ticket_booking_path(ticket) if num_available>0 %></td>
         </tr>
         <% end %>
     </tbody>
