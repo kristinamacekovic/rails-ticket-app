@@ -1,4 +1,4 @@
-<h1><%="#{current_user.email[0,current_user.email.index('@')]}'s bookings"  %></h1>
+<h2><%="#{current_user.email[0,current_user.email.index('@')]}'s bookings"  %></h2>
 
 <table>
     <thead>
@@ -7,24 +7,27 @@
             <th>From</th>
             <th>To</th>
             <th>Departure</th>
+            <th>To Departure</th>
             <th colspan="3"></th>
         </tr>
     </thead>
 
     <tbody>
         <% @bookings_detail.each do |booking| %>
+        <% if booking.ticket.departure > DateTime.now %>
         <tr>
             <td><%= booking.ticket.company %></td>
             <td><%= booking.ticket.from %></td>
             <td><%= booking.ticket.to %></td>
             <td><%= booking.ticket.departure.to_formatted_s(:long)    %></td>
-            <% if get_hours(booking.ticket.departure-DateTime.now)>0 %>
-            <td><%= link_to 'Cancel', booking, method: :delete, data: { confirm: 'Are you sure?' }%></td>
-            <% else %>
+            <td><% get_hours(booking.ticket.departure-DateTime.now) %></td>
+            <% if get_hours(booking.ticket.departure-DateTime.now).nil? || get_hours(booking.ticket.departure-DateTime.now)<=0 %>
             <td> Too late to cancel </td>
+            <% else %>
+            <td><%= link_to 'Cancel', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-cancel"%></td>
             <% end %>
         </tr>
         <% end %>
+        <% end %>
     </tbody>
 </table>
-<%= link_to 'Back to tickets', root_path %>

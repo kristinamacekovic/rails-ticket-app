@@ -1,3 +1,199 @@
 // Place all the styles related to the Tickets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+$font-stack:    Open Sans, Helvetica, Avenir, sans-serif;
+$accent-color: #384D48;
+$accent-color-2: #F7CE5B;
+$accent-color-red: #DA1B3E;
+$accent-color-success: #9ECE27;
+$primary-black: #080C09;
+$body-color: #F8F9F1;
+
+body {
+    font-family: $font-stack;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: black;
+    background-color: $body-color;
+}
+
+.container {
+    .outer{
+        height: 100vw;
+        width: 100vh;
+    }
+}
+
+
+
+table {
+  margin: 2em auto;
+  border-collapse: collapse;
+  border-bottom: 2px solid $accent-color;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.05),
+    0px 20px 20px rgba(0, 0, 0, 0.05), 0px 30px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    background-color: white;
+  tr {
+    &:hover {
+      background: gray;
+
+      td {
+        color: $primary-black;
+        background: $body-color;
+
+      }
+    }
+    height: 2em;
+    background: white;
+
+  }
+  th,
+  td {
+    color: #999;
+    padding: 2em 20px;
+    border-collapse: collapse;
+    background-color: white;
+    font-size: 16px;
+  }
+  th {
+    background: $accent-color;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    &.last {
+      border-right: none;
+    }
+  }
+}
+
+h1 {
+    text-align: center;
+    font-size: 5em;
+    margin: 2em auto;
+}
+
+.nav {
+    text-align: right;
+    text-transform: uppercase;
+}
+
+/* Style buttons */
+.btn-passive{
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  margin: 0 0 0 0.2em;
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  text-decoration: none;
+}
+
+.btn-action{
+  background-color: $accent-color-2;
+  border-radius: 5px;
+  border: none; /* Remove borders */
+color:$body-color; /* White text */
+padding: 12px 16px; /* Some padding */
+margin: 0 0 0 0.2em;
+font-size: 16px; /* Set a font size */
+cursor: pointer; /* Mouse pointer on hover */
+text-decoration: none;
+}
+
+.btn-buy:visited,
+.btn-back:visited,
+.btn-cancel:visited
+ {
+    color: $body-color;
+}
+
+.btn-back {
+  border: none; /* Remove borders */
+  padding: 12px 16px; /* Some padding */
+  margin: 0 0 0 0.2em;
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  text-decoration: none;
+  background-color: $accent-color;
+  border-radius: 5px;
+}
+
+
+
+ 
+
+
+.btn-buy {
+  background-color: $accent-color-2;
+  border-radius: 5px;
+  border: none; /* Remove borders */
+  padding: 0.8em 2em; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  text-decoration: none;
+}
+
+.btn-cancel {
+  background-color: $accent-color-red;
+  border-radius: 5px;
+  border: none; /* Remove borders */
+  padding: 0.8em 2em; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  text-decoration: none;
+  color: $body-color;
+}
+
+
+.btn {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $body-color;
+}
+
+
+.btn:hover {
+    background-color: $accent-color;
+    border-radius: 5px;
+}
+
+.icon-user {
+    margin: 0 0 0 2em;
+}
+
+.form {
+    margin: 2em auto;
+}
+
+input[type=submit] {
+    background-color: $accent-color-2;
+border-radius: 5px;
+border: none; /* Remove borders */
+color: $body-color; /* White text */
+padding: 12px 16px; /* Some padding */
+margin: 0 0 0 0.2em;
+font-size: 16px; /* Set a font size */
+cursor: pointer; /* Mouse pointer on hover */
+text-decoration: none;
+}
+
+input[type=submit]:hover {
+  background-color: $accent-color;
+  border-radius: 5px;
+}
+
+.alert {
+    color: $accent-color-red;
+}
+
+.notice {
+  color: $accent-color-success;
+}
+
+
+
+
