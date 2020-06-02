@@ -1,7 +1,7 @@
 # README
 
 ## The DBMS
-The DMBS used is PostgreSQL, both in development and production. The use on development was mostly decide to ease the headache of deploying to Heroku, which uses only PostgreSQL. The tables present in the DBMS (the models) and their associations are:
+The DMBS used is PostgreSQL, both in development and production. The use on development was mostly decided to ease the headache of deploying to Heroku, which uses only PostgreSQL. The tables present in the DBMS (the models) and their associations are:
 
 - Ticket(s)
   - has many users through bookings
@@ -15,7 +15,7 @@ The DMBS used is PostgreSQL, both in development and production. The use on deve
   
   
 ### Seeding the database
-The DB is seeded with fake data using the Faker gem (details in `seeds.rb`)
+The DB is seeded with fake data using the Faker gem (details in `seeds.rb`) with:
 - 22 tickets
   - 20 that have departure date within 60 days from now (from the day of writing, 2020-06-02)
   - 1 whose departure is 2 minutes from now
@@ -24,6 +24,7 @@ The DB is seeded with fake data using the Faker gem (details in `seeds.rb`)
 - 1 user
   - email: **test@test.com**
   - password: **password**
+  
 The last 2 tickets are designed for testing a feature that:
 - you can buy a ticket whose departure is under 1 hour from now, but you can't cancel it
 - tickets whose departure time has passed are removed from the list, both for all tickets and the users bought tickets
