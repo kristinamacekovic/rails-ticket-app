@@ -19,7 +19,7 @@
             <td><%= booking.ticket.from %></td>
             <td><%= booking.ticket.to %></td>
             <td><%= booking.ticket.departure.to_formatted_s(:long)    %></td>
-            <% if get_hours(booking.ticket.departure-DateTime.now).nil? || get_hours(booking.ticket.departure-DateTime.now)<=0 %>
+            <% if get_hours((booking.ticket.departure-2.hours)-DateTime.now).nil? || get_hours((booking.ticket.departure-2.hours)-DateTime.now)<=0 %>
             <td> Too late to cancel </td>
             <% else %>
             <td><%= link_to 'Cancel', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-cancel"%></td>

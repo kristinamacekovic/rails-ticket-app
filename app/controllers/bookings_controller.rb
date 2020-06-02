@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   # GET /bookings.json
   def index
     @bookings = Booking.where(user_id: current_user.id)
-    @bookings_detail = @bookings.joins(:ticket)
+    @bookings_detail = @bookings.joins(:ticket).order('departure')
   end
 
   # GET /bookings/1

@@ -15,6 +15,24 @@ Ticket.destroy_all
                 num_max: Faker::Number.within(range: 1..20))
 end
 
+
+# Add some tickets up to 1h to the departure, with a small number of tickets so # it's easy to test
+Ticket.create!([{
+  company: 'Flixbus',
+  departure: 180.minutes.from_now,
+  from: 'Zagreb',
+  to: 'Prague',
+  num_max: 2
+  }])
+
+Ticket.create!([{
+  company: 'Flixbus',
+  departure: 122.minutes.from_now,
+  from: 'Zagreb',
+  to: 'Prague',
+  num_max: 2
+  }])
+  
 p "Created #{Ticket.count} tickets"
 
 User.destroy_all
@@ -23,3 +41,4 @@ p "Created #{User.count} users"
 
 Booking.destroy_all
 p "Bookings: #{Booking.count}"
+
