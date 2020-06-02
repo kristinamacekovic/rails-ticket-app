@@ -33,7 +33,7 @@ To get the most recent tickets with these test cases, I suggest to run `rake db:
 
 ## Authentication and app usage
 
-Done using the devise gem. You can browse the tickets without logging in/registering, but in order to buuy a ticket, you need to register/log in. As described above, there is 1 test user seeded into the DB, but you can also register a new user. When logged in, you can see your username displayed in the top right corner on the home page (and in the heading of your list of bookings).
+Done using the devise gem. You can browse the tickets without logging in/registering, but in order to buy a ticket, you need to register/log in. As described above, there is 1 test user seeded into the DB, but you can also register a new user. When logged in, you can see your username displayed in the top right corner on the home page (and in the heading of your list of bookings).
 
 After you log in, you can see a list of your bookings by clicking "My Tickets" on the home page. You can always return to the home page by pressing the "Back to Tickets" button. All tickets and bookings are displayed in ascending order of departure. You can log out by pressing "Log out" on the home page.
 
@@ -41,6 +41,6 @@ After you log in, you can see a list of your bookings by clicking "My Tickets" o
 To buy a ticket, you will need to input a card number. To make it as simple as possible, we assume a card number is any number of length 16 (!), only numbers, no dashes(-) or [a-zA-Z] characters. After you buy a tickets (successfully) you will get a confirmation and be shown the details of you purchase. Click "Back to Tickets" to return to the home page. If there are no more available tickets for a ride, next to that ticket on the home page you will se "No more available tickets" where the BUY button would usually be, i.e. you can't buy a ticket that has 0 tickets available.
 
 ## Cancelling
-To cancel a bought ticket, click "My Tickets" on the home page and click "Cancel" next to the ticket you want to cancel. You can only do this up to an hour before the departure. After you cancel, the ticket disappears from your list of bookings and the counter next to that ticket on the home page is increased by 1.
+To cancel a bought ticket, click "My Tickets" on the home page and click "Cancel" next to the ticket you want to cancel. You can only do this up to an hour before the departure (if it's under 1 hour to departure, you will see "Too late to cancel" where the CANCEL button would usually be). After you cancel, the ticket disappears from your list of bookings and the counter next to that ticket on the home page is increased by 1.
 
 
