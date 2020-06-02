@@ -43,4 +43,7 @@ To buy a ticket, you will need to input a card number. To make it as simple as p
 ## Cancelling
 To cancel a bought ticket, click "My Tickets" on the home page and click "Cancel" next to the ticket you want to cancel. You can only do this up to an hour before the departure (if it's under 1 hour to departure, you will see "Too late to cancel" where the CANCEL button would usually be). After you cancel, the ticket disappears from your list of bookings and the counter next to that ticket on the home page is increased by 1.
 
+## Deployment
+The app is deployed to Heroku: https://skk-app.herokuapp.com
+
 
