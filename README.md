@@ -26,9 +26,6 @@ The DB is seeded with fake data using the Faker gem (details in `seeds.rb`) with
 - 0 bookings
 - 1 user
 
-  - email: **test@test.com**
-  - password: **password**
-
 The last 2 tickets are designed for testing a feature that:
 
 - you can buy a ticket whose departure is under 1 hour from now, but you can't cancel it
@@ -50,6 +47,6 @@ To buy a ticket, you will need to input a card number. To make it as simple as p
 
 To cancel a bought ticket, click "My Tickets" on the home page and click "Cancel" next to the ticket you want to cancel. You can only do this up to an hour before the departure (if it's under 1 hour to departure, you will see "Too late to cancel" where the CANCEL button would usually be). After you cancel, the ticket disappears from your list of bookings and the counter next to that ticket on the home page is increased by 1.
 
-## Deployment
-
+## Deployment (EDITED 2023-07-13)
 The app is deployed to Heroku: https://skk-app.herokuapp.com
+EDIT: as of April 2023, Heroku does not support free deployments anymore using PostgreSQL, so the URL below will not be working.
